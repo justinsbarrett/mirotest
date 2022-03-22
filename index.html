@@ -6,10 +6,10 @@
     miro.onReady(async () => {
       miro.initialize({
         extensionPoints: {
-          // create a button on the toolbar
+          // create a button on the bottom bar
           bottomBar: {
             title: "Miro plugin test",
-            svgIcon: '<svg xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" fill="blue" fill-rule="evenodd" stroke="currentColor" stroke-width="2" /></svg>',
+            svgIcon: '<circle cx="12" cy="12" r="9" fill="blue" fill-rule="evenodd" stroke="currentColor" stroke-width="2" />',
             onClick: () => {
               // open the sidebar when clicked
               // `/sidebar.html` will be relative to the plugin url
