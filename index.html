@@ -1,1 +1,30 @@
-<h1>Hello Miro!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://miro.com/app/static/sdk.1.1.js"></script>
+    <script>
+    miro.onReady(async () => {
+      miro.initialize({
+        extensionPoints: {
+          // create a button on the bottom bar
+          toolbar: {
+            title: "Open a sidebar",
+            svgIcon:
+              '<circle cx="12" cy="12" r="9" fill="blue" fill-rule="evenodd" stroke="currentColor" stroke-width="2"/>',
+            onClick: () => {
+              // open the sidebar when clicked
+              // `/sidebar.html` will be relative to the plugin url
+              miro.board.ui.openLeftSidebar("/sidebar.html");
+
+              // send a message to the sidebar after 5 seconds
+              setTimeout(() => {
+                miro.broadcastData("Hello from the toolbar");
+              }, 5000);
+            },
+          },
+        },
+      });
+    });
+  </script>
+</head>
+</html>
